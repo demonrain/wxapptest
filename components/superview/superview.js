@@ -13,7 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    // isInited: false
   },
 
   /**
@@ -21,14 +21,25 @@ Component({
    */
   methods: {
     initData() {
-      this.setData({
-        children: this.data.jsonData.children,
-        hasChild: this.data.jsonData.children.length>0?true:false
-      });
-      // console.log('tagid: ' + this.data.jsonData.entity.id +
-      //   'tag: ' +this.data.jsonData.entity.tag +
-      //   'children: ' +this.data.jsonData.children +
-      //   'hasChild: ' +(this.data.jsonData.children.length>0?true:false))
+      // if(this.data.isInited) {
+      //   this.setData({
+      //     hasChild: this.data.children.length>0?true:false
+      //   });
+      // }else {
+        if(this.data.jsonData.length>0) {
+          this.setData({
+            children: this.data.jsonData,
+            hasChild: this.data.jsonData.length>0?true:false
+          });
+        }else {
+          return;
+        }
+
+      // }
+      // this.data.isInited = true;
+      console.log(
+        'children: ' +this.data.jsonData +
+        'hasChild: ' +(this.data.jsonData.length>0?true:false))
     }
   },
 
