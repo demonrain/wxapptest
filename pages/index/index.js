@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    jsonData: [{
+    jsonData: {
       "entity": {
         "id": "3ff78804-b7cc-6eda-0c45-0569f1b4f794",
         "tag": "aui-form"
@@ -71,7 +71,7 @@ Page({
           ]
         }
       ]
-    }]
+    }
   },
   onLoad: function () {
   }

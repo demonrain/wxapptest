@@ -21,25 +21,16 @@ Component({
    */
   methods: {
     initData() {
-      // if(this.data.isInited) {
-      //   this.setData({
-      //     hasChild: this.data.children.length>0?true:false
-      //   });
-      // }else {
-        if(this.data.jsonData.length>0) {
-          this.setData({
-            children: this.data.jsonData,
-            hasChild: this.data.jsonData.length>0?true:false
-          });
-        }else {
-          return;
-        }
-
-      // }
-      // this.data.isInited = true;
-      console.log(
-        'children: ' +this.data.jsonData +
-        'hasChild: ' +(this.data.jsonData.length>0?true:false))
+      var hasChild = this.data.isInited?(this.data.jsonData.length>0?true:false):([this.data.jsonData].length>0?true:false);
+      if(hasChild) {
+        this.setData({
+          //如果不是数组先转成数组 root问题
+          children: this.data.jsonData.length?this.data.jsonData:[this.data.jsonData],
+          hasChild: hasChild
+        });
+      }else {
+        return;
+      }
     }
   },
 

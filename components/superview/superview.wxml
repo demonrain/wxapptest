@@ -1,9 +1,9 @@
 <view wx:for="{{children}}" wx:for-index="idx" wx:for-item="child">
     <form wx:if="{{child.entity.tag == 'aui-form'}}" id="{{child.entity.id}}">form<superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></form>
     <view wx:elif="{{child.entity.tag == 'aui-div'}}" id="{{child.entity.id}}">div<superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></view>
-    <text wx:elif="{{child.entity.tag == 'aui-textfield'}}" id="{{child.entity.id}}">textfield<superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></text>
+    <input wx:elif="{{child.entity.tag == 'aui-textfield'}}" id="{{child.entity.id}}" placeholder="textfield"><superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></input>
     <select wx:elif="{{child.entity.tag == 'aui-select'}}" id="{{child.entity.id}}">select<superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></select>
-    <checkbox wx:elif="{{child.entity.tag == 'aui-checkbox'}}" id="{{child.entity.id}}">z<superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></checkbox>
+    <checkbox wx:elif="{{child.entity.tag == 'aui-checkbox'}}" id="{{child.entity.id}}">checkbox<superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></checkbox>
     <radio wx:elif="{{child.entity.tag == 'aui-radio'}}" id="{{child.entity.id}}">radio<superview wx:if="{{hasChild}}" jsonData="{{child.children}}"></superview></radio>
     <view wx:else></view>
 </view>
