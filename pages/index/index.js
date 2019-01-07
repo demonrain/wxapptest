@@ -4,51 +4,75 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+    jsonData: {
+      "entity": {
+        "id": "3ff78804-b7cc-6eda-0c45-0569f1b4f794",
+        "tag": "aui-form"
+      },
+      "children": [
+        {
+          "entity": {
+            "id": "9201cd12-02a8-39cc-d710-2287c8d047ed",
+            "tag": "aui-div"
+          },
+          "children": [
+            {
+              "entity": {
+                "id": "fdfc2f89-71eb-c525-2688-02b171a12c84",
+                "tag": "aui-textfield"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "entity": {
+            "id": "241a1267-1f78-a77c-3d5f-ff27d6c8e60e",
+            "tag": "aui-div"
+          },
+          "children": [
+            {
+              "entity": {
+                "id": "d1a4fbb6-6625-d1ab-9289-75b32c13ce68",
+                "tag": "aui-select"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "entity": {
+            "id": "cc904521-3048-d581-27e5-689aea602eed",
+            "tag": "aui-div"
+          },
+          "children": [
+            {
+              "entity": {
+                "id": "ab2d2506-d619-5a79-4f93-6bf2366343bb",
+                "tag": "aui-checkbox"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "entity": {
+            "id": "5a57c46c-7ecd-d9a2-1d39-0603ae2b057f",
+            "tag": "aui-div"
+          },
+          "children": [
+            {
+              "entity": {
+                "id": "d094db08-7ccc-2951-c8bd-a9249b5048ca",
+                "tag": "aui-radio"
+              },
+              "children": []
+            }
+          ]
         }
-      })
+      ]
     }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+  onLoad: function () {
   }
 })

@@ -1,4 +1,5 @@
 {
+  "component": true,
   "usingComponents": {
     "superview": "/components/superview/superview"
   }

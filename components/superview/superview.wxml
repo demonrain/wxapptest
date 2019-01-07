@@ -1,0 +1,11 @@
+<view wx:for="{{children}}" wx:for-index="idx" wx:for-item="child">
+    <view wx:if="{{child.tag == 'aui-form'}}" id="{{child.tagid}}">1<superview wx:if="{{child.haschild}}" jsonData="{{child.children}}"></superview></view>
+    <view wx:elif="{{child.tag == 'aui-div'}}" id="{{child.tagid}}">2<superview wx:if="{{child.haschild}}" jsonData="{{child.children}}"></superview></view>
+    <view wx:elif="{{child.tag == 'aui-textfield'}}" id="{{child.tagid}}">3<superview wx:if="{{child.haschild}}" jsonData="{{child.children}}"></superview></view>
+    <view wx:elif="{{child.tag == 'aui-select'}}" id="{{child.tagid}}">4<superview wx:if="{{child.haschild}}" jsonData="{{child.children}}"></superview></view>
+    <view wx:elif="{{child.tag == 'aui-checkbox'}}" id="{{child.tagid}}">5<superview wx:if="{{child.haschild}}" jsonData="{{child.children}}"></superview></view>
+    <view wx:elif="{{child.tag == 'aui-radio'}}" id="{{child.tagid}}">6<superview wx:if="{{child.haschild}}" jsonData="{{child.children}}"></superview></view>
+    <view wx:else></view>
+</view>
+<!-- <view>传入的id：{{id}}</view>
+<view>传入的tag：{{tag}}</view> -->
